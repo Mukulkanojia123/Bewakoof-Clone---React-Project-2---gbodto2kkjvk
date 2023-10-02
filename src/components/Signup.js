@@ -20,7 +20,7 @@ const SignUp = () => {
         name:name,
         email : email,
         password : password,
-        appType : "ecommerce"
+        appType : "linkedin"
     })
 
     const signIpiFetch = async() =>{

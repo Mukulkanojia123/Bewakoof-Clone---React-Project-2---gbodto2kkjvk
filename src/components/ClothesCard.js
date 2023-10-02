@@ -16,6 +16,7 @@ const ClothesCard = ({data}) => {
      
 
         const textColor = colorObj[color];
+        console.log(data.displayImage);
   return (
    <div>
      <label className="absolute bg-green-400 text-white m-0 px-2 py-1 rounded-lg">{data.sellerTag}</label>
