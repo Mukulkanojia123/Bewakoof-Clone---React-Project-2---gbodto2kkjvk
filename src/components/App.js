@@ -2,9 +2,11 @@
 import Body from './Body'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import FrontPage from './FrontPage';
-import MenWare from './MenWare';
-import WomenWare from './WomenWare';
+import Products from './Products';
+
 import ClothInfo from './ClothInfo';
+import Login from './Login';
+import Signup from './Signup';
 
 function App() {
 
@@ -19,15 +21,23 @@ function App() {
         },
         {
           path:"/menware",
-          element: <MenWare/>
+          element: <Products/>
         },
         {
           path : "/womenware",
-          element : <WomenWare/>
+          element : <Products/>
         },
         {
           path : "/ClothInfo/:resId",
           element : <ClothInfo/>
+        },
+        {
+          path:"/login",
+          element : <Login/>
+        },
+        {
+          path:"/signuppage",
+          element:<Signup/>
         }
       ]
     }

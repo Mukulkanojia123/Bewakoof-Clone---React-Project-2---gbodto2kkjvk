@@ -4,7 +4,7 @@ import { BASE_URL, projectId } from '../utils'
 import ClothesCard from './ClothesCard';
 import { Link } from 'react-router-dom';
 
-const MenWare = () => {
+const Products = () => {
     //   const { data, error } = FetchApi();
     //   console.log(data);
     const [list, setList] = useState(null);
@@ -41,4 +41,4 @@ const MenWare = () => {
       );
     };
 
-export default MenWare;
+export default Products;
