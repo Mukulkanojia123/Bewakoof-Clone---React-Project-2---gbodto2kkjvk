@@ -3,10 +3,11 @@ import Body from './Body'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import FrontPage from './FrontPage';
 import Products from './Products';
-
+import ProtectedRoutes from './ProtectedRoutes';
 import ClothInfo from './ClothInfo';
 import Login from './Login';
 import Signup from './Signup';
+import WishList from './WishList';
 
 function App() {
 
@@ -38,6 +39,10 @@ function App() {
         {
           path:"/signuppage",
           element:<Signup/>
+        },
+        {
+          path : "/wishlist",
+          element : <ProtectedRoutes component={<WishList/>}/>
         }
       ]
     }

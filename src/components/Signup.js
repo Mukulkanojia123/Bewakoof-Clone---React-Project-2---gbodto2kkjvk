@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { SIGN_UP_API , projectId } from '../utils';
+import { SIGN_UP_API , projectId } from '../Utils/utils';
 
 const SignUp = () => {
 
@@ -11,16 +11,18 @@ const SignUp = () => {
     const [sUpage, setSUPage] = useState(false);
     // const [sInage, setINPage] = useState(false);
     // const [sUpage, setSUPage] = useState(false);
+    // console.log(projectId, SIGN_UP_API)
 
     let headerList = {
-        projectID : projectId
+      "projectId": projectId,
+      "Content-Type": "application/json"
     }
 
     let bodyContent = JSON.stringify({
-        name:name,
-        email : email,
-        password : password,
-        appType : "linkedin"
+      "name": name,
+      "email": email,
+      "password": password,
+      "appType": "ecommerce"
     })
 
     const signIpiFetch = async() =>{

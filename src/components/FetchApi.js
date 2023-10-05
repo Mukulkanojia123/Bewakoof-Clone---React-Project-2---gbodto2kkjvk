@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BASE_URL, projectId } from '../utils'
+import { BASE_URL, projectId } from '../Utils/utils'
 import axios from 'axios'
 
 

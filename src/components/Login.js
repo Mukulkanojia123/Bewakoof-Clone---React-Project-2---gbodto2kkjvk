@@ -1,17 +1,64 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { LOGIN_IN_API,projectId } from '../Utils/utils';
+import { useDispatch } from 'react-redux';
+import { setLoginDetails } from '../Utils/LoginSlice';
 
 const Login = () => {
 
-    const [excess, setExcess] = useState("");
+    // const [excess, setExcess] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [sUpage, setSUPage] = useState(false);
-    // const [sInage, setINPage] = useState(false);
-    // const [sUpage, setSUPage] = useState(false);
+    const [isValidUser, setIsValidUser] = useState(false)
+    const [userData, setUserData] = useState(null)
 
-    const handleSignIn = () => {
+    const dispatch = useDispatch()
 
+    let headerList = {
+        "projectId": projectId,
+        "Content-Type": "application/json"
+      }
+  
+      let bodyContent = JSON.stringify({       
+        "email": email,
+        "password": password,
+        "appType": "ecommerce"
+      })
+
+    const fetchsignInApi = async() =>{
+        const data = await fetch(LOGIN_IN_API,{
+            method : "POST",
+            headers : headerList,
+            body : bodyContent
+        })
+        const json = await data.json();
+        console.log(json);
+        if (json.token) {
+            console.log(json.status)
+            localStorage.setItem("jwtToken", json.token);
+            setIsValidUser(true);
+            setUserData(json);
+            // toast.success(`Successfully logged in`);
+
+            setEmail("");
+            setPassword("");
+
+        } else {
+            // toast.error(`${data.message}`);
+            console.log("error");
+        }
+    }
+
+
+    useEffect(()=>{
+            if(isValidUser){
+                    dispatch(setLoginDetails(userData))
+                    console.log("dispatch");
+            }
+    },[userData])
+    function handleSignIn() {
+            fetchsignInApi()
+            console.log(email, password)
     }
 
     

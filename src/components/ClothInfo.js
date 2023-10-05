@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { PRODUCTS_INFO_API, projectId } from '../utils'
+import { PRODUCTS_INFO_API,projectId ,ADD_WISHLIST_API} from '../Utils/utils'
 import Productimages from './Productimages'
 
 const ClothInfo = () => {
@@ -48,6 +48,32 @@ const ClothInfo = () => {
         FetchData();
     }, [resId]);
 
+        const handleWishList = async() =>{
+            const userToken = localStorage.getItem("jwtToken");
+                try{
+
+                    const data = await fetch(ADD_WISHLIST_API + resId,{
+                        method : "PATCH",
+                        headers:{
+                            "Content-Type" :"application/json",
+                            Authorization : `Bearer ${userToken}`,
+                            projectId:projectId
+                        },
+                        body : {
+                            productId : resId
+                        }
+
+                    })
+                    const json = await data.json();
+                    consolelog(json);
+
+                }catch(error){
+                        console.log("error in adding whisList",error);
+                }
+        }
+
+
+
     return (
         <div>
             {error ? (
@@ -90,7 +116,7 @@ const ClothInfo = () => {
                                 <button className="bg-red-600 text-white rounded-sm py-2 px-4 mr-4">
                                     Add to Cart
                                 </button>
-                                <button className="border rounded-sm py-2 px-4">
+                                <button className="border rounded-sm py-2 px-4" onClick={handleWishList}>
                                     Wishlist
                                 </button>
                             </div>

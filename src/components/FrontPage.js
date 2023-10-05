@@ -1,7 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Slider from './Slider'
+import { useSelector } from 'react-redux'
+
+
 
 const FrontPage = () => {
+  const userDetail = useSelector(store => store.userDetail);
+
+    useEffect(()=>{
+      console.log(userDetail);
+      console.log("succesfull data set");
+    },[userDetail])
+
+
+
   const imgarr1 = [
     {
       url : 'https://images.bewakoof.com/uploads/grid/app/bewakoof-winter-store-online-fashion-shopping-720-banner-1609849948.jpg'
@@ -40,9 +52,9 @@ const FrontPage = () => {
         <Slider />
         <div className='flex justify-center m-10'>
           {
-            imgarr2.map((img) =>(
+            imgarr2.map((img,index) =>(
               <div className='mx-6 shadow-lg'>
-                <img src={img.url} className='w-[400px]'/>
+                <img src={img.url} key={index} className='w-[400px]'/>
               </div>
             ))
           }
@@ -50,9 +62,9 @@ const FrontPage = () => {
 
         <div className='flex justify-center m-10'>
           {
-            imgarr1.map((img) =>(
+            imgarr1.map((img,index) =>(
               <div className='mx-6 shadow-lg'>
-                <img src={img.url} className='w-[400px]'/>
+                <img src={img.url} key={index}className='w-[400px]'/>
               </div>
             ))
           }

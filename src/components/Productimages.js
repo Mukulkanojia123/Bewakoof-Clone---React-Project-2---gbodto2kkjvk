@@ -13,7 +13,7 @@ const Productimages = ({ images }) => {
     setSlideArray((prevSlideArray) => {
       const newSlideArray = [...prevSlideArray];
       newSlideArray.push(images[upidx % 6]);
-      console.log(upidx%6,images[upidx % 6])
+      // console.log(upidx%6,images[upidx % 6])
       newSlideArray.shift();
       return newSlideArray;
     });
@@ -21,12 +21,12 @@ const Productimages = ({ images }) => {
 
   const moveDownFun = () => {
     setDownIdx((prevDownIdx) => Math.abs(prevDownIdx - 1));
-    if(downidx)
+    // if(downidx)
 
     setSlideArray((prevSlideArray) => {
       const newSlideArray = [...prevSlideArray];
       newSlideArray.unshift(images[downidx % 6]);
-      console.log(downidx,images[downidx % 6])
+      // console.log(downidx,images[downidx % 6])
       newSlideArray.pop();
       return newSlideArray;
     });

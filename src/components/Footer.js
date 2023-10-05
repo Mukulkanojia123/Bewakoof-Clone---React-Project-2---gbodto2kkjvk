@@ -27,9 +27,9 @@ const Footer = () => {
                 <div>
                     <h1 className='font-bold p-2'>About us</h1>
                     <ul>
-                        <li className='p-1'>Latest Songs</li>
-                        <li className='p-1'>New Songs</li>
-                        <li className='p-1'>Hollywood Songs</li>
+                        <li className='p-1'>Latest trend</li>
+                        <li className='p-1'>Feature</li>
+                        <li className='p-1'>Top sells</li>
                         <li className='p-1'>Team</li>
                         <li className='p-1'>career</li>
                     </ul>
@@ -37,7 +37,7 @@ const Footer = () => {
                 <div>
                     <h1 className='font-bold p-2'>Terms of Use</h1>
                     <ul>
-                        <li className='p-1'>Music Content</li>
+                        <li className='p-1'>Clothing</li>
                         <li className='p-1'>Billing & Payments</li>
                         <li className='p-1'>Advertising</li>
                         <li className='p-1'>Limitation Of Liability</li>
