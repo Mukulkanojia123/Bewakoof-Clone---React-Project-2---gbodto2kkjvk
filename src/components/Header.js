@@ -33,7 +33,7 @@ const Header = () => {
                 <ul className='flex justify-around'>
                     <li className='font-bold text-xl p-2'><Link to={"/login"}>Login</Link></li>
                     <li className='font-bold text-xl p-2'><Link to={"/wishlist"}>Like</Link></li>
-                    <li className='font-bold text-xl p-2'>cart</li>
+                    <li className='font-bold text-xl p-2'><Link to={"/cart"}>cart</Link></li>
                 </ul>
             </div>
         </div>

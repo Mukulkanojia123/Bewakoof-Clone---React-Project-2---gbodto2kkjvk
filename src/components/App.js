@@ -8,6 +8,7 @@ import ClothInfo from './ClothInfo';
 import Login from './Login';
 import Signup from './Signup';
 import WishList from './WishList';
+import Cart from './Cart';
 
 function App() {
 
@@ -43,6 +44,10 @@ function App() {
         {
           path : "/wishlist",
           element : <ProtectedRoutes component={<WishList/>}/>
+        },
+        {
+          path : "/cart",
+          element: <Cart/>
         }
       ]
     }

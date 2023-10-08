@@ -46,15 +46,20 @@ const FrontPage = () => {
       url:'https://images.bewakoof.com/t1080/men-ajeeb-prani-printed-t-shirt-581118-1678684894-1.jpg'
     },
   ]
+
+  function clearJwt(){
+    localStorage.removeItem("jwtToken")
+  }
  
   return (
     <div>
+      <button className='bg-red-200' onClick={clearJwt}>clear jwtToken</button>
         <Slider />
         <div className='flex justify-center m-10'>
           {
             imgarr2.map((img,index) =>(
-              <div className='mx-6 shadow-lg'>
-                <img src={img.url} key={index} className='w-[400px]'/>
+              <div className='mx-6 shadow-lg' key={index}>
+                <img src={img.url}  className='w-[400px]'/>
               </div>
             ))
           }
@@ -63,8 +68,8 @@ const FrontPage = () => {
         <div className='flex justify-center m-10'>
           {
             imgarr1.map((img,index) =>(
-              <div className='mx-6 shadow-lg'>
-                <img src={img.url} key={index}className='w-[400px]'/>
+              <div className='mx-6 shadow-lg'  key={index}>
+                <img src={img.url}className='w-[400px]'/>
               </div>
             ))
           }

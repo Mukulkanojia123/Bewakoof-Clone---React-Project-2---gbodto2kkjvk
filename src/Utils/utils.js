@@ -12,3 +12,6 @@ export const SIGN_UP_API = `${BASE_URL}api/v1/user/signup`
 export const LOGIN_IN_API = `${BASE_URL}api/v1/user/login`
 //  add to whishList 
 export const ADD_WISHLIST_API = `${BASE_URL}api/v1/ecommerce/wishlist/`
+
+// add to cart api
+export const Add_TO_CART = `${BASE_URL}api/v1/ecommerce/cart/`
