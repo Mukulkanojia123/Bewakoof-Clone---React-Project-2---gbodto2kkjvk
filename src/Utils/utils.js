@@ -15,3 +15,5 @@ export const ADD_WISHLIST_API = `${BASE_URL}api/v1/ecommerce/wishlist/`
 
 // add to cart api
 export const Add_TO_CART = `${BASE_URL}api/v1/ecommerce/cart/`
+ //api for search
+export const SEARCH_API = `${BASE_URL}api/v1/ecommerce/clothes/products?search=`

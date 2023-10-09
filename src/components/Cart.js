@@ -49,9 +49,9 @@ const Cart = () => {
         {
           // i use WishList card here because structure is little bit different so handle it in wishList componet 
           cartData && cartData.items.length > 0 && cartData.items.map((like) => (
-            <div>
+            <div key={like._id}>
             <label className="absolute bg-green-400 text-white m-2 px-2 py-1 rounded-full" onClick={()=>removeFromCart(like.product._id)}>X</label>
-            <WishListCard key={like._id} data={like} />
+            <WishListCard  data={like} />
             </div>
           ))
           //likesdata && likesdata.items.length > 0 && <WishListCard data={likesdata.items[0]} />

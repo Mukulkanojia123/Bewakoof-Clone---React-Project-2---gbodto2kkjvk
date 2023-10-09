@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import FetchApi from './FetchApi';
 import { BASE_URL, projectId } from '../Utils/utils'
 import ClothesCard from './ClothesCard';
 import { Link } from 'react-router-dom';

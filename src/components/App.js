@@ -9,6 +9,7 @@ import Login from './Login';
 import Signup from './Signup';
 import WishList from './WishList';
 import Cart from './Cart';
+import SearchPage from './SearchPage';
 
 function App() {
 
@@ -48,6 +49,10 @@ function App() {
         {
           path : "/cart",
           element: <Cart/>
+        },
+        {
+          path: "/search/:searchText",
+          element:<SearchPage/>
         }
       ]
     }

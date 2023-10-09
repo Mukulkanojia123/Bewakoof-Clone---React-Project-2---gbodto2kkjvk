@@ -1,7 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+
+    const [search , setSearch] = useState("");
   return (
     <div className='flex justify-between items-center bg-yellow-400'>
         <div className='flex w-1/2 justify-evenly m-5'>
@@ -24,10 +26,12 @@ const Header = () => {
             <div className='w-1/2 flex'>
                 <input
                  type='text'
+                 onChange={(e)=>setSearch(e.target.value)}
+                 value={search}
                  placeholder='Search...'
                  className=' bg-gray-50 border border-black border-solid p-2 w-full rounded-lg'
                 />
-                <p className='font-bold text-xl p-2'>Search</p>
+                <p className='font-bold text-xl p-2'><Link to={"/search/" + search}>Search</Link></p>
             </div>
             <div className='w-1/2'>
                 <ul className='flex justify-around'>
