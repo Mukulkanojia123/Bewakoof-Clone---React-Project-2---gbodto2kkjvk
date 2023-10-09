@@ -1,29 +1,66 @@
-import React ,{useEffect}from 'react'
+import React, { useEffect, useState } from 'react'
 import { projectId } from '../Utils/utils';
+import WishListCard from './WishListCard';
 
 const WishList = () => {
-
- const getWishList = async()=>{
+  const [likesdata, setLikesData] = useState(null);
   const userToken = localStorage.getItem("jwtToken");
-  const data = await fetch("https://academics.newtonschool.co/api/v1/ecommerce/wishlist",{
-    headers :{
-      'Authorization': `Bearer ${userToken}`,
-       'projectID': projectId
-    }
-  })
 
-  const json = await data.json();
-  console.log(json);
+  const getWishList = async () => {
+    
+    const data = await fetch("https://academics.newtonschool.co/api/v1/ecommerce/wishlist", {
+      headers: {
+        'Authorization': `Bearer ${userToken}`,
+        'projectID': projectId
+      }
+    })
 
- }
+    const json = await data.json();
+    setLikesData(json.data)
+    console.log(json);
+    // console.log(likesdata.items[0])
+
+  }
 
 
-  useEffect(()=>{
+  useEffect(() => {
     getWishList();
 
-  },[])
+  }, [])
+  // console.log(likesdata.items[0])
+  console.log('hello')
+       
+
+       const removeAllItems = async() => {
+        const data = await fetch("https://academics.newtonschool.co/api/v1/ecommerce/wishlist", {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${userToken}`,
+            'projectID': projectId
+          }
+        })
+        const json = await data.json();
+        console.log(json)
+        setLikesData(null);
+       }
+
   return (
-    <div>WishList</div>
+    <div>
+      <div className="flex justify-end">
+        <button className="align m-4 p-3 bg-blue-700 text-white rounded-lg" onClick={removeAllItems}>Remove All</button>
+      </div>
+      <div className='flex justify-center flex-wrap'>
+        {
+
+          likesdata && likesdata.items.length > 0 && likesdata.items.map((like) => (
+            <WishListCard key={like._id} data={like} />
+          ))
+          //likesdata && likesdata.items.length > 0 && <WishListCard data={likesdata.items[0]} />
+        }
+      </div>
+
+
+    </div>
   )
 }
 
