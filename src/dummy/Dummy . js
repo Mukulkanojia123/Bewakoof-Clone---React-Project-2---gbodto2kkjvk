@@ -1,5 +1,6 @@
  
- 
+ const {resId} = useParams();
+    const userToken = localStorage.getItem("jwtToken");
  // working code clothinfo with cart ans wishlist api 
   import React, { useEffect, useState } from 'react'
 import axios from 'axios'

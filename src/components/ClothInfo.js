@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { PRODUCTS_INFO_API, projectId, ADD_WISHLIST_API,Add_TO_CART } from '../Utils/utils'
 import Productimages from './Productimages'
+import { Link } from 'react-router-dom'
 
 const ClothInfo = () => {
     const { resId } = useParams();
@@ -180,13 +181,16 @@ const ClothInfo = () => {
                             <p className="p-3">Quentity : <input type='number'min={"1"} className='border border-solid border-black'value={quentity} onChange={(e) =>setQuentity(e.target.value)}/></p>
 
                             <div className="flex my-4">
-                                <button className="bg-red-600 text-white rounded-sm py-2 px-4 mr-4" onClick={addToCart}>
+                                <button className="bg-red-600 text-white rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
                                     Add to Cart
                                 </button>
                                 <button className="border rounded-sm py-2 px-4" onClick={toggleWishList}>
                                    {
                                     like? 'Remove':'Wishlist'  
                                    } 
+                                </button>
+                                <button className="bg-yellow-400 text-white rounded-lg py-2 px-4 mr-2 ml-4">
+                                     <Link to={`/buynow/${resId}`}>Buy Now</Link>
                                 </button>
                             </div>
                             <div className="my-4">

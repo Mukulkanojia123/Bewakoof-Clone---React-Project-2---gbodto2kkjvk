@@ -10,6 +10,9 @@ import Signup from './Signup';
 import WishList from './WishList';
 import Cart from './Cart';
 import SearchPage from './SearchPage';
+import Order from './Order';
+import OrderNow from './OrderNow';
+import Filter from './Filter';
 
 function App() {
 
@@ -53,6 +56,18 @@ function App() {
         {
           path: "/search/:searchText",
           element:<SearchPage/>
+        },
+        {
+          path : "/order",
+          element : <Order/>
+        },
+        {
+          path : `/buynow/:resId`,
+          element : <OrderNow/>
+        },
+        {
+          path : "/filter",
+          element:<Filter/>
         }
       ]
     }
