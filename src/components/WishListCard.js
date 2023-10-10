@@ -1,20 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const WishListCard = ({ data }) => {
-  let displayImage, name, price;
+  let displayImage, name, price,id;
 
   if (data.products) {
     // this is for data come from wishList component
-    const { products, _id } = data;
+    const { products} = data;
     displayImage = products.displayImage;
     name = products.name;
     price = products.price;
+    id = products._id
   } else {
     // this is for data come from cart component
-    const { product, _id } = data;
+    const { product } = data;
     displayImage = product.displayImage;
     name = product.name;
     price = product.price;
+    id = product._id
   }
 
   return (
@@ -24,7 +27,9 @@ const WishListCard = ({ data }) => {
         <div className='text-bold p-2'>{name}</div>
         <div className='text-bold font-bold p-2'>{price}</div>
         <div>
-          <button className='bg-green-400 text-white p-2 rounded-lg m-3'>Add to order</button>
+          <button className='bg-green-400 text-white p-2 rounded-lg m-3'>
+           <Link to={`/buynow/${id}`}> Order Now</Link>
+            </button>
         </div>
       </div>
     

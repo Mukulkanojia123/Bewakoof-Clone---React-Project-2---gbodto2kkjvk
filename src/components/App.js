@@ -13,6 +13,7 @@ import SearchPage from './SearchPage';
 import Order from './Order';
 import OrderNow from './OrderNow';
 import Filter from './Filter';
+import OrderDetails from './OrderDetails'
 
 function App() {
 
@@ -68,6 +69,10 @@ function App() {
         {
           path : "/filter",
           element:<Filter/>
+        },
+        {
+          path : `/orderDetails/:resId`,
+          element : <OrderDetails/>
         }
       ]
     }

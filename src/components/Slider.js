@@ -30,7 +30,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 function Slider() {
   return (
     <div className=" flex justify-center m-10">
-    <div className="w-10/12 m-1/12">
+    <div className="w-10/12 m-1/12 z-0">
     <Swiper
       spaceBetween={30}
       centeredSlides={true}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { projectId } from '../Utils/utils';
 import WishListCard from './WishListCard';
+import { Link } from 'react-router-dom';
 
 const WishList = () => {
   const [likesdata, setLikesData] = useState(null);
@@ -40,7 +41,7 @@ const WishList = () => {
           }
         })
         const json = await data.json();
-        console.log(json)
+        console.log(json.data)
         setLikesData(null);
        }
 
@@ -53,7 +54,7 @@ const WishList = () => {
         {
 
           likesdata && likesdata.items.length > 0 && likesdata.items.map((like) => (
-            <WishListCard key={like._id} data={like} />
+            <Link to={"/ClothInfo/" + like.products._id } key={like.products._id}> <WishListCard key={like.products._id} data={like} /></Link>
           ))
           //likesdata && likesdata.items.length > 0 && <WishListCard data={likesdata.items[0]} />
         }

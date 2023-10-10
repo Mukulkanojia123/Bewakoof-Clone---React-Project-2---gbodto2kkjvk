@@ -19,3 +19,6 @@ export const Add_TO_CART = `${BASE_URL}api/v1/ecommerce/cart/`
 export const SEARCH_API = `${BASE_URL}api/v1/ecommerce/clothes/products?search=`
 // get order List
 export const ORDER_API = `${BASE_URL}api/v1/ecommerce/order/`
+// filter api 
+export const FILTER_API = `${BASE_URL}api/v1/ecommerce/clothes/products?filter=`
+

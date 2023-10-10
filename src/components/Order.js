@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { projectId, ORDER_API } from '../Utils/utils'
+import { Link } from 'react-router-dom'
 
 
 const Itemdetails = ({ item }) => {
@@ -71,11 +72,13 @@ const Order = () => {
 
 
   return (
-    <div className='p-10 flex justify-center'>
+    <div className='p-10 flex justify-center flex-wrap'>
 
       {
         orders && orders.map((order) => (
-          <CreateOrderedCard key={order.order._id} data={order} />
+          <Link to={`/orderDetails/${order.order._id}`} key={order.order._id}>
+          <CreateOrderedCard  data={order} />
+          </Link>
         ))
       }
     </div>
