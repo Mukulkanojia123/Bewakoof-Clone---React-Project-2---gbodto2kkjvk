@@ -37,6 +37,8 @@ const ClothInfo = () => {
 
     const textColor = colorObj[tcolor];
     
+
+    // get product from resId
     const FetchData = async () => {
         try {
             const data = await fetch(PRODUCTS_INFO_API + resId, {
@@ -59,6 +61,8 @@ const ClothInfo = () => {
         FetchData();
     }, [resId]);
 
+
+    // Add product to wishList 
     const handleWishList = async () => {
         const userToken = localStorage.getItem("jwtToken");
         console.log(userToken);
@@ -84,6 +88,7 @@ const ClothInfo = () => {
         }
     }
 
+    // remove product from whishList
     const removeWishList = async()=>{
         const data = await fetch(ADD_WISHLIST_API + resId, {
             method: 'DELETE',
@@ -98,7 +103,7 @@ const ClothInfo = () => {
     }
     
     
-
+        // Add product to cart 
     const additfun = async()=>{
             try{
                     
@@ -181,7 +186,7 @@ const ClothInfo = () => {
                             <p className="p-3">Quentity : <input type='number'min={"1"} className='border border-solid border-black'value={quentity} onChange={(e) =>setQuentity(e.target.value)}/></p>
 
                             <div className="flex my-4">
-                                <button className="bg-yellow-600  rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
+                                <button className="bg-yellow-500  rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
                                     Add to Cart
                                 </button>
                                 <button className="border rounded-sm py-2 px-4" onClick={toggleWishList}>

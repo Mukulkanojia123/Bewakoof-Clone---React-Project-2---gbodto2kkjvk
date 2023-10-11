@@ -51,7 +51,7 @@ const WishList = () => {
         </div>
       }
 
-  return (
+  return likesdata? (
     <div>
       <div className="flex justify-end">
         <button className="align m-4 p-3 bg-blue-700 text-white rounded-lg" onClick={removeAllItems}>Remove All</button>
@@ -68,6 +68,10 @@ const WishList = () => {
 
 
     </div>
+  ) :(
+    <div className='flex justify-center'>
+          <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+        </div>
   )
 }
 

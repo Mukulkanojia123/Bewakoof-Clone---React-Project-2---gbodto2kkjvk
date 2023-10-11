@@ -27,17 +27,36 @@ const DeleteAccount = () => {
         "password" : newPassword
       })
 
-    const updatePasswordFetch =async() =>{
-        const data = await fetch(DELETE_ACC,{
-            method : "DELETE",
-            headers : headerList,
-            body : bodyContent
-        })
-        const json = await data.json();
-        console.log(json);
-        setRes(json);
-
-    }
+      const updatePasswordFetch = async () => {
+        try {
+          const data = await fetch(DELETE_ACC, {
+            method: "DELETE",
+            headers: headerList,
+            body: bodyContent,
+          });
+          console.log(data)
+      
+          if (data.status >= 200 && data.status < 300) {
+            // Check if the response has valid JSON content type
+            const contentType = data.headers.get("Content-Type");
+            if (contentType && contentType.includes("application/json")) {
+              const json = await data.json();
+              console.log(json);
+              setRes(json);
+            } else {
+              // Handle the case where the response doesn't contain JSON
+              console.error("Response does not contain valid JSON.");
+            }
+          } else {
+            // Handle the case where the request was not successful (e.g., 4xx or 5xx status codes)
+            console.error("Request was not successful.");
+          }
+        } catch (error) {
+          // Handle any other errors that may occur during the fetch operation
+          console.error("An error occurred:", error);
+        }
+      };
+      
 
     useEffect(()=>{
         // if(res?.status === "success"){

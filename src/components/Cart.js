@@ -7,6 +7,8 @@ const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const userToken = localStorage.getItem("jwtToken");
 
+
+  // get cart items 
   const getCartItems = async () => {
     const data = await fetch(Add_TO_CART, {
       headers: {
@@ -23,6 +25,8 @@ const Cart = () => {
         getCartItems();
     },[])
 
+
+    // remove products from cart
       const removeFromCart = async(id) =>{
         const data = await fetch(Add_TO_CART + id, {
           method: 'DELETE',
@@ -37,8 +41,8 @@ const Cart = () => {
         getCartItems();
       }
 
-  
-        if(cartData.items.length === 0){
+        // image when no data
+        if(!cartData || !cartData.items || cartData.items.length === 0){
           return <div className='flex justify-center'>
             <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
           </div>
