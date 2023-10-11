@@ -14,6 +14,11 @@ import Order from './Order';
 import OrderNow from './OrderNow';
 import Filter from './Filter';
 import OrderDetails from './OrderDetails'
+import UserAccount from './UserAccount';
+import UpdatePassword from './UpdatePassword';
+import ForgetPassword from './ForgetPassword';
+import DeleteAccount from './DeleteAccount';
+import Dummy from '../dummy/Dummy';
 
 function App() {
 
@@ -52,7 +57,7 @@ function App() {
         },
         {
           path : "/cart",
-          element: <Cart/>
+          element: <ProtectedRoutes component={<Cart/>}/> 
         },
         {
           path: "/search/:searchText",
@@ -60,11 +65,11 @@ function App() {
         },
         {
           path : "/order",
-          element : <Order/>
+          element : <ProtectedRoutes component={<Order/>}/> 
         },
         {
           path : `/buynow/:resId`,
-          element : <OrderNow/>
+          element : <ProtectedRoutes component={<OrderNow/>}/>
         },
         {
           path : "/filter",
@@ -72,7 +77,19 @@ function App() {
         },
         {
           path : `/orderDetails/:resId`,
-          element : <OrderDetails/>
+          element : <ProtectedRoutes component={<OrderDetails/>}/>
+        },
+        {
+          path : "/useraccount/",
+          element : <ProtectedRoutes component={<UserAccount/>}/>
+        },
+        {
+          path : "/updatepassword/",
+          element : <UpdatePassword/>
+        },
+        {
+          path : "/deleteaccount/",
+          element : <DeleteAccount/>
         }
       ]
     }

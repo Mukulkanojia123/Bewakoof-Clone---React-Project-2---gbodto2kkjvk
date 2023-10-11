@@ -21,4 +21,8 @@ export const SEARCH_API = `${BASE_URL}api/v1/ecommerce/clothes/products?search=`
 export const ORDER_API = `${BASE_URL}api/v1/ecommerce/order/`
 // filter api 
 export const FILTER_API = `${BASE_URL}api/v1/ecommerce/clothes/products?filter=`
+// for update password
+export const UPDATE_PASSWORD = `${BASE_URL}api/v1/user/updateMyPassword`
+// delete my account 
+export const DELETE_ACC = `${BASE_URL}api/v1/user/deleteMe`
 

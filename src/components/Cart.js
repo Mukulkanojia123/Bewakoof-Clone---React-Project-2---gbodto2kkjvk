@@ -4,7 +4,7 @@ import WishListCard from './WishListCard';
 
 const Cart = () => {
 
-  const [cartData, setCartData] = useState(null);
+  const [cartData, setCartData] = useState([]);
   const userToken = localStorage.getItem("jwtToken");
 
   const getCartItems = async () => {
@@ -38,9 +38,15 @@ const Cart = () => {
       }
 
   
+        if(cartData.items.length === 0){
+          return <div className='flex justify-center'>
+            <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+          </div>
+        }
 
-  return (
+  return  (
     <div>
+      
       <div className="flex justify-end">
         {/* <button className="align m-4 p-3 bg-blue-700 text-white rounded-lg" onClick={removeAllItems}>Remove All</button> */}
       </div>

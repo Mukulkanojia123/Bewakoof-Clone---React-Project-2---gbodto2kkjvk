@@ -45,6 +45,12 @@ const WishList = () => {
         setLikesData(null);
        }
 
+       if( likesdata && likesdata?.items?.length === 0){
+        return <div className='flex justify-center'>
+          <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+        </div>
+      }
+
   return (
     <div>
       <div className="flex justify-end">

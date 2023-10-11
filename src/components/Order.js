@@ -70,6 +70,11 @@ const Order = () => {
     fetchGetOrderList();
   }, [])
 
+  if( orders.length === 0){
+    return <div className='flex justify-center'>
+      <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+    </div>
+  }
 
   return (
     <div className='p-10 flex justify-center flex-wrap'>

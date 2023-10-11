@@ -181,7 +181,7 @@ const ClothInfo = () => {
                             <p className="p-3">Quentity : <input type='number'min={"1"} className='border border-solid border-black'value={quentity} onChange={(e) =>setQuentity(e.target.value)}/></p>
 
                             <div className="flex my-4">
-                                <button className="bg-red-600 text-white rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
+                                <button className="bg-yellow-600  rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
                                     Add to Cart
                                 </button>
                                 <button className="border rounded-sm py-2 px-4" onClick={toggleWishList}>

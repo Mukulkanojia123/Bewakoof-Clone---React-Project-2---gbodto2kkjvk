@@ -25,10 +25,10 @@ const Header = () => {
 
     return (
         <div className='flex justify-between items-center bg-white border-b sticky top-0 z-10'>
-            <div className='flex w-1/2 justify-evenly m-5'>
-                <div className='ml-2' onClick={handleToggleMenu}>
+            <div className='flex w-1/2 justify-evenly m-5'>     
+                    <Link to={ "/useraccount/"}>
                     <img className='w-8 'src='https://images.bewakoof.com/web/india-flag-round-1639566913.png'/>
-                </div>
+                    </Link>
                 <div className='flex w-1/2 justify-center'>
                     <Link t={'/'}>
                         <img
