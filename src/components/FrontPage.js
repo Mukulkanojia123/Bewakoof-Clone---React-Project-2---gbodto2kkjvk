@@ -9,7 +9,7 @@ const FrontPage = () => {
   const userDetail = useSelector(store => store.userDetail);
 
     useEffect(()=>{
-      console.log(userDetail);
+      // console.log(userDetail);
       console.log("succesfull data set");
     },[userDetail])
 

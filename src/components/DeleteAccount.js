@@ -41,19 +41,19 @@ const DeleteAccount = () => {
             const contentType = data.headers.get("Content-Type");
             if (contentType && contentType.includes("application/json")) {
               const json = await data.json();
-              console.log(json);
+              // console.log(json);
               setRes(json);
             } else {
               // Handle the case where the response doesn't contain JSON
-              console.error("Response does not contain valid JSON.");
+              console.log("Response does not contain valid JSON.");
             }
           } else {
             // Handle the case where the request was not successful (e.g., 4xx or 5xx status codes)
-            console.error("Request was not successful.");
+            console.log("Request was not successful.");
           }
         } catch (error) {
           // Handle any other errors that may occur during the fetch operation
-          console.error("An error occurred:", error);
+          console.log("An error occurred:", error);
         }
       };
       
@@ -67,7 +67,7 @@ const DeleteAccount = () => {
 
     function handleSignUp(){
         updatePasswordFetch()
-        console.log(name , email, password, newPassword);
+        // console.log(name , email, password, newPassword);
 }
   return (
     <div>

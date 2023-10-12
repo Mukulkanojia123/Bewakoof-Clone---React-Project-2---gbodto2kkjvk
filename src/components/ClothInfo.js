@@ -66,7 +66,7 @@ const ClothInfo = () => {
     // Add product to wishList 
     const handleWishList = async () => {
         const userToken = localStorage.getItem("jwtToken");
-        console.log(userToken);
+        // console.log(userToken);
     
         try {
             const data = await fetch(ADD_WISHLIST_API + resId, {
@@ -82,7 +82,7 @@ const ClothInfo = () => {
             });
     
             const json = await data.json();
-            console.log(json);
+            // console.log(json);
             setLike(!like);
         } catch (error) {
             console.log("error in adding wishlist", error);
@@ -99,14 +99,14 @@ const ClothInfo = () => {
             }
           })
           const json = await data.json();
-          console.log(json)
+        //   console.log(json)
           setLike(!like);
     }
     
     
         // Add product to cart 
     const additfun = async()=>{
-        console.log(userToken);
+        // console.log(userToken);
             try{
                     
                 const data = await fetch(Add_TO_CART+resId,{
@@ -121,7 +121,7 @@ const ClothInfo = () => {
                     })
                 })
                 const json = await data.json();
-                console.log(json);
+                // console.log(json);
         
             }catch(error){
                     console.log(error);
@@ -141,7 +141,7 @@ const ClothInfo = () => {
 
     const addToCart = ()=>{
         if(userToken){
-            console.log('funcall');
+            // console.log('funcall');
             additfun()
         }
     }

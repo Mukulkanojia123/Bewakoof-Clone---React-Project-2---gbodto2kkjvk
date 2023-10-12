@@ -18,7 +18,7 @@ const WishList = () => {
 
     const json = await data.json();
     setLikesData(json.data)
-    console.log(json);
+    // console.log(json);
     // console.log(likesdata.items[0])
 
   }
@@ -29,7 +29,7 @@ const WishList = () => {
 
   }, [])
   // console.log(likesdata.items[0])
-  console.log('hello')
+  // console.log('hello')
        
 
        const removeAllItems = async() => {
@@ -41,7 +41,7 @@ const WishList = () => {
           }
         })
         const json = await data.json();
-        console.log(json.data)
+        // console.log(json.data)
         setLikesData(null);
        }
 

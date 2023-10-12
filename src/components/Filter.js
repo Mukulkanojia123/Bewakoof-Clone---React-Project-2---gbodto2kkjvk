@@ -48,7 +48,7 @@ const Filter = () => {
         }
     })
     const json = await data.json();
-    console.log(json.data)
+    // console.log(json.data)
     setFilter(json.data);
 
    

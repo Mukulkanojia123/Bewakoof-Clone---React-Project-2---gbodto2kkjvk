@@ -34,7 +34,7 @@ const UpdatePassword = () => {
             body : bodyContent
         })
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         setRes(json);
 
     }
@@ -48,7 +48,7 @@ const UpdatePassword = () => {
 
     function handleSignUp(){
         updatePasswordFetch()
-        console.log(name , email, password, newPassword);
+        // console.log(name , email, password, newPassword);
 }
   return (
     <div>

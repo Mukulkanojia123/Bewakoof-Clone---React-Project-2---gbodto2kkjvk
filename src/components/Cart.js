@@ -19,7 +19,7 @@ const Cart = () => {
     })
     const json = await data.json();
     setCartData(json.data);
-    console.log(json);
+    // console.log(json);
   }
 
     useEffect(()=>{
@@ -38,7 +38,7 @@ const Cart = () => {
         })
         const json = await data.json();
         
-        console.log(json);
+        // console.log(json);
         getCartItems();
       }
 

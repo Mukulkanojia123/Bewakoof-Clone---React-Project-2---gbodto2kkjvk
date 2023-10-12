@@ -53,7 +53,7 @@ const Order = () => {
 
 
   const fetchGetOrderList = async () => {
-    console.log(userToken)
+    // console.log(userToken)
     const data = await fetch(ORDER_API, {
       headers: {
         projectID: projectId,

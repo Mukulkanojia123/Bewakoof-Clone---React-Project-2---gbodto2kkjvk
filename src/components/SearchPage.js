@@ -9,7 +9,7 @@ const SearchPage = () => {
     const [searchData , setSearchData] = useState(null);
         const {searchText} = useParams();
         const userToken = localStorage.getItem("jwtToken");
-        console.log(searchText);
+        // console.log(searchText);
 
 
         const fetchSearch = async()=>{

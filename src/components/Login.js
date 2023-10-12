@@ -32,7 +32,7 @@ const Login = () => {
             body : bodyContent
         })
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         if (json.token) {
             console.log(json.status)
             localStorage.setItem("jwtToken", json.token);
@@ -58,7 +58,7 @@ const Login = () => {
     },[userData])
     function handleSignIn() {
             fetchsignInApi()
-            console.log(email, password)
+            // console.log(email, password)
     }
 
     

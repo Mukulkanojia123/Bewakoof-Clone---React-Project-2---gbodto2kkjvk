@@ -18,14 +18,14 @@ const UserAccount = () => {
             <h1 className='font-bold text-xl'>Email : {email}</h1>
         </div> */}
         <div className=' ml-20 mr-20 mt-5 pb-10 pl-20 flex justify-evenly flex-col md:flex-row'>
-           <Link to={"/order"}> <div className='w-[250] bg-gray-100 p-5 rounded-lg flex'>
+           <Link to={"/order"}> <div className='w-[250] bg-gray-100 p-5 rounded-lg flex mb-5'>
                 <div>
                 <h1 className='font-semibold'>My Order</h1>
                 <p>to see the order history</p>
                 </div>
                 <BsChevronCompactRight className='m-4'/>
             </div></Link>
-           <Link to={"/deleteaccount/"}> <div className='w-[350] bg-gray-100 p-5 rounded-lg flex'>
+           <Link to={"/deleteaccount/"}> <div className='w-[350] bg-gray-100 p-5 rounded-lg flex mb-5'>
                 <div >
                 <h1 className='font-semibold'>Delete My Account</h1>
                 <p>to delete the Account</p>

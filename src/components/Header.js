@@ -29,11 +29,11 @@ const Header = () => {
         <div>
         <div className='flex justify-between items-center bg-white border-b sticky top-0 z-10'>
             <div className='flex w-1/2 justify-evenly m-5'> 
-            <div className='hidden md:block'>    
+            {/* <div className='hidden md:block'>     */}
                     <Link to={ "/useraccount/"}>
-                    <img className='w-8 'src='https://images.bewakoof.com/web/india-flag-round-1639566913.png'/>
+                    <img className='md:w-8 w-6'src='https://images.bewakoof.com/web/india-flag-round-1639566913.png'/>
                     </Link>
-                    </div>
+                    {/* </div> */}
                 <div className='flex w-1/2 justify-center'>
                     <Link t={'/'}>
                         <img

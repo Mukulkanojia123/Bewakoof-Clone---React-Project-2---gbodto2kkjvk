@@ -33,13 +33,13 @@ const SignUp = () => {
         })
 
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         
     }
 
     function handleSignUp(){
             signIpiFetch()
-            console.log(name , email, password);
+            // console.log(name , email, password);
     }
 
     
