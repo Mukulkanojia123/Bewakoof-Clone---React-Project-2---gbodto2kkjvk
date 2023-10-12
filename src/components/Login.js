@@ -94,7 +94,8 @@ const Login = () => {
                     </button>
                 </form>
                 </div>
-                <div className='mt-4'>
+                <p className='italic mt-2 text-yellow-600'>use "xyz@123gmail.com"  & "123456" as email and password</p>
+                <div className='mt-2'>
                     for SignUp click <span className='text-blue-600 hover:border-b border-blue-600'><Link to={"/signuppage"}>Here</Link></span>
                 </div>
 

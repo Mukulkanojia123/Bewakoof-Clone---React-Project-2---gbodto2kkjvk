@@ -97,25 +97,27 @@ const OrderNow = () => {
        
         <div className=' bg-orange-100 w-full p-10 m-0 flex justify-center'>
             {ordered ? (
-                <>
+                <div className="bg-white  rounded-lg  w-5/12 p-10">
                     <h1 className="text-2xl font-bold text-green-600 p-10 text-center">
                         {message.message}
                     </h1>
 
-                    <div className="flex justify-center h-30 ">
+                    <div className="flex justify-center h-20 ">
                         <img
                             src="https://images.squarespace-cdn.com/content/v1/6209fc508f791e729abec7d0/18641903-a848-4a3a-a0a3-c9e2ddaa15c4/02-lottie-tick-01-instant-2.gif"
                             alt="ordergif"
-                            className="h-30"
+                            className="h-20"
                         />
                     </div>
+                    <div>
                     <h1 className="text-2xl font-bold text-black p-2 text-center">
                         Order Id: <span className="text-red-600">{message.data._id}</span>
                     </h1>
                     <h3 className="text-2xl font-bold text-black p-2 text-center">
                         Total price: ₹{message.data.totalPrice}
                     </h3>
-                </>
+                    </div>
+                </div>
             ) : (
                 // <div className='bg-orange-100 w-full p-10 m-0 flex justify-center'>
                 <div className="bg-white  rounded-lg  w-5/12 p-10">
@@ -191,7 +193,7 @@ const OrderNow = () => {
                     </label>
                     <button
                         onClick={handleBuyNow}
-                        className="bg-yellow-400 text-white px-4 py-2 ml-10 rounded-lg hover:bg-red-400 focus:outline-none"
+                        className="bg-yellow-400 text-white px-4 py-2 ml-10 rounded-lg hover:bg-yellow-500 focus:outline-none"
                     >
                         Buy Now
                     </button>
