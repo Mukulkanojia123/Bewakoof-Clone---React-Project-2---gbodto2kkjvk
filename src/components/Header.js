@@ -8,27 +8,32 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { BiFilterAlt } from 'react-icons/bi';
 import { FaList } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-
+import Sidebar from './Sidebr';
 
 
 
 const Header = () => {
 
     const [search, setSearch] = useState("");
+    const [hum , setHum] = useState(false)
     const dispatch = useDispatch();
 
     const handleToggleMenu = () => {
         // console.log("yes")
-        dispatch(toggleMenu());
+        setHum(!hum);
+        // dispatch(toggleMenu());
     }
 
 
     return (
+        <div>
         <div className='flex justify-between items-center bg-white border-b sticky top-0 z-10'>
-            <div className='flex w-1/2 justify-evenly m-5'>     
+            <div className='flex w-1/2 justify-evenly m-5'> 
+            <div className='hidden md:block'>    
                     <Link to={ "/useraccount/"}>
                     <img className='w-8 'src='https://images.bewakoof.com/web/india-flag-round-1639566913.png'/>
                     </Link>
+                    </div>
                 <div className='flex w-1/2 justify-center'>
                     <Link t={'/'}>
                         <img
@@ -38,13 +43,15 @@ const Header = () => {
                         />
                     </Link>
                 </div>
+                <div className=' hidden md:block'>
                 <div className='flex w-1/2'>
                     <p className='font-bold px-5 text-xl'><Link to={'/menware'}>MEN</Link></p>
                     <p className='font-bold px-5 text-xl'><Link to={'/womenware'}>WOMEN</Link></p>
                 </div>
-
+                </div>
             </div>
-            <div className='flex w-1/2 justify-center m-5'>
+            <div className='hidden w-1/2 md:block'>
+            <div className='flex w-full justify-center m-5 '>
                 <div className='w-1/2 flex'>
                     <input
                         type='text'
@@ -64,7 +71,20 @@ const Header = () => {
                         <li className='font-bold text-xl p-2 m-1'><Link to={"/order"}><FaList /></Link></li>
                     </ul>
                 </div>
+                
             </div>
+            </div>
+            <div className='block md:hidden w-1/2'>
+                <div className='flex justify-center pb-2'>
+                    < FaBars onClick={handleToggleMenu} className='mt-3 '/>
+
+                </div>
+                    
+            </div>
+        </div>
+        {
+            hum && <Sidebar/>
+        }
         </div>
     )
 }

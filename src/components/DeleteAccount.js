@@ -110,7 +110,7 @@ const DeleteAccount = () => {
                 <button
                  onClick={handleSignUp}
                   type="submit"
-                  className="w-1/2 ml-32 bg-red-600 text-white py-2 rounded hover:bg-blue-600 transition"
+                  className="w-1/2 ml-32 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition"
                 >
                   Delete
                 </button>

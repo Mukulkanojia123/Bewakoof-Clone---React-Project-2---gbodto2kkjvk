@@ -25,7 +25,7 @@ const CreateOrderedCard = ({ data }) => {
   // console.log(createdAt, items, shipmentDetails, totalPrice);
 
   return (
-    <div className='w-[550px] bg-gray-100 p-2 rounded-lg m-10'>
+    <div className='md:w-[550px] w-[350px] bg-gray-100 p-2 rounded-lg md:m-10 '>
       <h1>Your order created At : {createdAt}</h1>
       <h2>No. of items : {items.length}</h2>
       {
@@ -49,7 +49,7 @@ const CreateOrderedCard = ({ data }) => {
 
 const Order = () => {
   const userToken = localStorage.getItem("jwtToken");
-  const [orders, setOrders] = useState(null);
+  const [orders, setOrders] = useState([]);
 
 
   const fetchGetOrderList = async () => {

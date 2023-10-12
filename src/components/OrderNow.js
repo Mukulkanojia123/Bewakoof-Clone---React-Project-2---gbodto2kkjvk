@@ -31,7 +31,7 @@ const OrderNow = () => {
         const requestBody = {
           productId: resId,
           quantity: quantity,
-          addressType: addressInfo.addressType,
+          addressType: "HOME",
           address: {
             street: addressInfo.street,
             city: addressInfo.city,
@@ -40,7 +40,7 @@ const OrderNow = () => {
             zipCode: addressInfo.zipCode,
           },
         };
-        console.log("Request Body:", requestBody);
+        // console.log("Request Body:", requestBody);
       
         try {
           const response = await fetch(
@@ -94,7 +94,8 @@ const OrderNow = () => {
     // }
 
     return (
-        <div className=' w-full p-10 '>
+       
+        <div className=' bg-orange-100 w-full p-10 m-0 flex justify-center'>
             {ordered ? (
                 <>
                     <h1 className="text-2xl font-bold text-green-600 p-10 text-center">
@@ -116,7 +117,8 @@ const OrderNow = () => {
                     </h3>
                 </>
             ) : (
-                <div className="bg-gray-200  rounded-lg  w-full p-10">
+                // <div className='bg-orange-100 w-full p-10 m-0 flex justify-center'>
+                <div className="bg-white  rounded-lg  w-5/12 p-10">
                     <label className="block mb-2">
                         Quantity:
                         <input
@@ -124,18 +126,18 @@ const OrderNow = () => {
                             value={quantity}
                             onChange={handleQuantityChange}
                             min={1}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
-                    <label className="block mb-2">
-                        Address Type:
-                        <input
+                    <label className="block mb-2 font-bold">
+                        Address 
+                        {/* <input
                             type="text"
                             name="addressType"
                             value={addressInfo.addressType}
                             onChange={handleAddressChange}
                             className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
-                        />
+                        /> */}
                     </label>
                     <label className="block mb-2">
                         Street:
@@ -144,7 +146,7 @@ const OrderNow = () => {
                             name="street"
                             value={addressInfo.street}
                             onChange={handleAddressChange}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
                     <label className="block mb-2">
@@ -154,7 +156,7 @@ const OrderNow = () => {
                             name="city"
                             value={addressInfo.city}
                             onChange={handleAddressChange}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
                     <label className="block mb-2">
@@ -164,7 +166,7 @@ const OrderNow = () => {
                             name="state"
                             value={addressInfo.state}
                             onChange={handleAddressChange}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
                     <label className="block mb-2">
@@ -174,7 +176,7 @@ const OrderNow = () => {
                             name="country"
                             value={addressInfo.country}
                             onChange={handleAddressChange}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
                     <label className="block mb-2">
@@ -184,18 +186,20 @@ const OrderNow = () => {
                             name="zipCode"
                             value={addressInfo.zipCode}
                             onChange={handleAddressChange}
-                            className="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                            className="border rounded-md px-2 py-1 ml-10 focus:outline-none focus:border-blue-500"
                         />
                     </label>
                     <button
                         onClick={handleBuyNow}
-                        className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-400 focus:outline-none"
+                        className="bg-yellow-400 text-white px-4 py-2 ml-10 rounded-lg hover:bg-red-400 focus:outline-none"
                     >
                         Buy Now
                     </button>
                 </div>
+                // </div>
             )}
         </div>
+        
     );
 };
 

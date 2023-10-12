@@ -4,25 +4,28 @@ import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
 
-  const isMenuOpen = useSelector(store => store.app.isOpen)
+  // const isMenuOpen = useSelector(store => store.app.isOpen)
 //   console.log(isMenuOpen)
 
-  if(!isMenuOpen){
-    // console.log("off")
-    return null;
-  } 
+  // if(!isMenuOpen){
+  //   // console.log("off")
+  //   return null;
+  // } 
 
  
   return (
-    <div className='p-5 w-100  shadow-lg'>
-         <ul>
-            <li><Link to={"/"}><h1>Home</h1></Link></li>
-            <li><Link to={"/order"}><h1>Order List</h1></Link></li>
-            <li>Video</li>
-            <li>Live</li>
-        </ul>
-       
-    </div>
+    <div >
+    <ul className='flex flex-col items-center md:hidden'>
+        <li className='  hover:text-blue-600 mt-2'><Link to={"/menware"}>MEN</Link></li>
+        <li className=' hover:text-blue-600  mt-2'><Link to={"/womenware"}>WOMEN</Link></li>
+        <li className=' hover:text-blue-600  mt-2'> <Link to={"/login"}>LOGIN</Link></li>
+        <li className='hover:text-blue-600  mt-2'><Link to={"/"}>Home</Link></li>
+        <li className='hover:text-blue-600  mt-2'><Link to={"/wishlist"}>WishList</Link></li>
+        <li className='hover:text-blue-600  mt-2'><Link to={"/cart"}>cart</Link></li>
+        <li className='hover:text-blue-600  mt-2'><Link to={"/filter"}>search by filter</Link></li>
+        <li className='hover:text-blue-600  mt-2'><Link to={"/order"}>Orderlist</Link></li>
+    </ul>
+</div>
   )
 }
 

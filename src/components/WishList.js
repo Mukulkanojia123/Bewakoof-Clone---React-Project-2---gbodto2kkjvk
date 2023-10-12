@@ -60,7 +60,7 @@ const WishList = () => {
         {
 
           likesdata && likesdata.items.length > 0 && likesdata.items.map((like) => (
-            <Link to={"/ClothInfo/" + like.products._id } key={like.products._id}> <WishListCard key={like.products._id} data={like} /></Link>
+            <Link to={"/ClothInfo/" + like.products._id } key={like.products._id}> <WishListCard data={like} /></Link>
           ))
           //likesdata && likesdata.items.length > 0 && <WishListCard data={likesdata.items[0]} />
         }

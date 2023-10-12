@@ -5,19 +5,19 @@ import { useSelector } from 'react-redux'
 
 const UserAccount = () => {
 
-    const userDetail = useSelector(store => store.userDetail);
-            const {name , email} = userDetail?.userDetails?.data
-            console.log(name,email)
+    // const userDetail = useSelector(store => store.userDetail);
+    //         const {name , email} = userDetail?.userDetails?.data
+    //         console.log(name,email)
   return (
     <div>
         <div className='ml-20 mr-20 pt-10 pb-10'>
             <h1 className='font-bold text-xl  ml-20 border-b-2 border-yellow-500'>My Account</h1>
         </div>
-        <div className='ml-20 mr-20 pt-2 pb-2 flex justify-around'>
+        {/* <div className='ml-20 mr-20 pt-2 pb-2 flex justify-around'>
             <h1 className='font-bold text-xl'>Name : {name}</h1>
             <h1 className='font-bold text-xl'>Email : {email}</h1>
-        </div>
-        <div className=' ml-20 mr-20 mt-5 pb-10 pl-20 flex justify-evenly'>
+        </div> */}
+        <div className=' ml-20 mr-20 mt-5 pb-10 pl-20 flex justify-evenly flex-col md:flex-row'>
            <Link to={"/order"}> <div className='w-[250] bg-gray-100 p-5 rounded-lg flex'>
                 <div>
                 <h1 className='font-semibold'>My Order</h1>

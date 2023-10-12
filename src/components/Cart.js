@@ -10,6 +10,7 @@ const Cart = () => {
 
   // get cart items 
   const getCartItems = async () => {
+    console.log(userToken);
     const data = await fetch(Add_TO_CART, {
       headers: {
         'Authorization': `Bearer ${userToken}`,

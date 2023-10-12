@@ -20,7 +20,8 @@ const ClothInfo = () => {
 
 
         const userToken = localStorage.getItem("jwtToken");
-        console.log(userToken)
+        // console.log(userToken)
+        const userToken2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjZhYzA2NDdmMjVlNTk1M2NjMDBlOSIsImlhdCI6MTY5NzAzMzU0OSwiZXhwIjoxNzI4NTY5NTQ5fQ.AvmHIerq4PzJo0k6LjBeiq50e08Lou2y7VDB74qYx1A'
 
     const tcolor = color?.toLowerCase();
     const colorObj = {
@@ -105,6 +106,7 @@ const ClothInfo = () => {
     
         // Add product to cart 
     const additfun = async()=>{
+        console.log(userToken);
             try{
                     
                 const data = await fetch(Add_TO_CART+resId,{
@@ -166,7 +168,7 @@ const ClothInfo = () => {
                             <h2 className="text-2xl font-semibold p-3">Brand:{brand}</h2>
                             <div className="my-4 p-3">
                                 <span className="text-lg font-bold ">Product Details:</span>{" "}
-                                {tags.map((tag) => (
+                                {tags?.map((tag) => (
                                     <div key={tag._id} className="p-2">
                                         {tag.label}
                                         <div>Type:{tag.type}</div>
@@ -186,7 +188,7 @@ const ClothInfo = () => {
                             <p className="p-3">Quentity : <input type='number'min={"1"} className='border border-solid border-black'value={quentity} onChange={(e) =>setQuentity(e.target.value)}/></p>
 
                             <div className="flex my-4">
-                                <button className="bg-yellow-500  rounded-lg py-2 px-4 mr-4" onClick={addToCart}>
+                                <button className="bg-yellow-400   py-2 px-4 mr-4" onClick={addToCart}>
                                     Add to Cart
                                 </button>
                                 <button className="border rounded-sm py-2 px-4" onClick={toggleWishList}>
@@ -194,7 +196,7 @@ const ClothInfo = () => {
                                     like? 'Remove':'Wishlist'  
                                    } 
                                 </button>
-                                <button className="bg-yellow-400 text-white rounded-lg py-2 px-4 mr-2 ml-4">
+                                <button className="bg-yellow-400 text-white  py-2 px-4 mr-2 ml-4">
                                      <Link to={`/buynow/${resId}`}>Buy Now</Link>
                                 </button>
                             </div>

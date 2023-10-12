@@ -67,7 +67,7 @@ const Login = () => {
     return (
         <div className='bg-orange-100 w-full p-10 flex justify-center'>
 
-            <div className="bg-white p-20 md:mt-12 rounded-xl shadow-md w-6/12 ">
+            <div className="bg-white p-20 md:mt-12 rounded-xl shadow-md md:w-6/12 ">
                 <div>
                 <h1 className="text-xl sm:text-2xl ml-56 font-semibold mb-4">Login</h1>
                 <form onClick={(e) => e.preventDefault()} className="space-y-4">
@@ -88,7 +88,7 @@ const Login = () => {
                     <button
                         onClick={handleSignIn}
                         type="submit"
-                        className="w-1/2 ml-32 bg-green-500 text-white py-2 rounded hover:bg-green-600 transition"
+                        className="w-1/2 md:ml-32 bg-green-500 text-white py-2 rounded hover:bg-green-600 transition"
                     >
                         Login
                     </button>

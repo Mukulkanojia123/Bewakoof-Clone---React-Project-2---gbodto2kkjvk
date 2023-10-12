@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import Slider from './Slider'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 
@@ -53,36 +54,36 @@ const FrontPage = () => {
  
   return (
     <div>
-      <button className='bg-red-200' onClick={clearJwt}>clear jwtToken</button>
+      {/* <button className='bg-red-200' onClick={clearJwt}>clear jwtToken</button> */}
         <Slider />
-        <div className='flex justify-center m-10'>
+        <div className='flex justify-center  m-10 flex-col md:flex-row'>
           {
             imgarr2.map((img,index) =>(
-              <div className='mx-6 shadow-lg' key={index}>
-                <img src={img.url}  className='w-[400px]'/>
+              <div className='mx-6 shadow-lg mb-4' key={index}>
+               <Link to={"/menware"}> <img src={img.url}  className='w-[400px]'/></Link>
               </div>
             ))
           }
         </div>
 
-        <div className='flex justify-center m-10'>
+        <div className='flex justify-center  m-10 flex-col md:flex-row'>
           {
             imgarr1.map((img,index) =>(
-              <div className='mx-6 shadow-lg'  key={index}>
-                <img src={img.url}className='w-[400px]'/>
+              <div className='mx-6 shadow-lg mb-4'  key={index}>
+               <Link to={"/womenware"}> <img src={img.url}className='w-[400px]'/></Link>
               </div>
             ))
           }
         </div>
         <div className='flex justify-center'>
-          <img src='https://images.bewakoof.com/uploads/grid/app/Revised-DOTW-Desktop-Banner-Homepage-Women-1696136721.jpg'/>
+         <Link to={"/womenware"}> <img src='https://images.bewakoof.com/uploads/grid/app/Revised-DOTW-Desktop-Banner-Homepage-Women-1696136721.jpg'/></Link>
         </div>
         <div className='flex justify-center m-6'>
-          <img src='https://images.bewakoof.com/t640/women-s-black-wanderlust-graphic-printed-oversized-t-shirt-620604-1695381861-1.jpg' className='w-[400px] mx-1'/>
-          <img src='https://images.bewakoof.com/t640/women-s-brown-vibin-graphic-printed-oversized-t-shirt-620606-1695381905-1.jpg' className='w-[400px] mx-1'/>
+         <Link to={"/womenware"}> <img src='https://images.bewakoof.com/t640/women-s-black-wanderlust-graphic-printed-oversized-t-shirt-620604-1695381861-1.jpg' className='w-[400px] mx-1'/></Link>
+         <Link to={"/womenware"}> <img src='https://images.bewakoof.com/t640/women-s-brown-vibin-graphic-printed-oversized-t-shirt-620606-1695381905-1.jpg' className='w-[400px] mx-1'/></Link>
         </div>
         <div className='flex justify-center'>
-          <img src='https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg'/>
+          <Link to={"/womenware"}><img src='https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg'/></Link>
         </div>
     </div>
   )
