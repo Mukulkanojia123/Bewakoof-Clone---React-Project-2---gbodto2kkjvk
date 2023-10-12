@@ -4,7 +4,7 @@ import Login from './Login';
 const ProtectedRoutes = ({component}) => {
     // localStorage.clear();
     const jwt_token = localStorage.getItem("jwtToken");
-    console.log(jwt_token);
+    // console.log(jwt_token);
     
   return jwt_token?(component) : (
         // <Navigate to={"/login"} replace/>

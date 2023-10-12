@@ -21,7 +21,7 @@ const ClothInfo = () => {
 
         const userToken = localStorage.getItem("jwtToken");
         // console.log(userToken)
-        const userToken2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjZhYzA2NDdmMjVlNTk1M2NjMDBlOSIsImlhdCI6MTY5NzAzMzU0OSwiZXhwIjoxNzI4NTY5NTQ5fQ.AvmHIerq4PzJo0k6LjBeiq50e08Lou2y7VDB74qYx1A'
+        // const userToken2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjZhYzA2NDdmMjVlNTk1M2NjMDBlOSIsImlhdCI6MTY5NzAzMzU0OSwiZXhwIjoxNzI4NTY5NTQ5fQ.AvmHIerq4PzJo0k6LjBeiq50e08Lou2y7VDB74qYx1A'
 
     const tcolor = color?.toLowerCase();
     const colorObj = {
@@ -214,90 +214,3 @@ const ClothInfo = () => {
 
 export default ClothInfo
 
-// const data = await fetch(PRODUCTS_INFO_API + resId,{
-//     headers: {
-//         projectId: projectId
-//     }
-// })
-// const json = await data.json();
-// console.log(json.data);
-// setProductInfo(json.data)
-// setLoading(false);
-// try {
-//     const response = await axios.get(ProductInfo_API + productId, {
-//       headers: {
-//         projectId: projectId,
-//       },
-//     });
-//     console.log(response.data.data);
-//     setProductInfo(response.data.data);
-//     setLoading(false);
-//   } catch (error) {
-//     setError(error);
-//     setLoading(false);
-//   }
-
-
-
-// with axios
-// const handleWishList = async () => {
-//     const userToken = localStorage.getItem("jwtToken");
-    
-//     try {
-//       const response = await axios.patch(ADD_WISHLIST_API, {
-//         productId: resId
-//       }, {
-//         headers: {
-//           "Content-Type": "application/json",
-//           "Authorization": `Bearer ${userToken}`,
-//           "projectId": projectId
-//         }
-//       });
-  
-//       console.log(response.data);
-//     } catch (error) {
-//       console.log("error in adding wishList", error);
-//     }
-//   };
-
-
-
-
-// const additfun = async()=>{
-//     try{
-            
-//         const data = await fetch(Add_TO_CART+resId,{
-//             method : "PATCH",
-//             headers :{
-//                 "Content-Type" :"application/json",
-//                 ' Authorization' : `Bearer ${userToken}`,
-//                  'projectId':'gbodto2kkjvk'
-//             },
-//             body: JSON.stringify({
-//                 'quantity': "1"
-//             })
-//         })
-//         const json = data.json();
-//         console.log(json);
-
-//     }catch(error){
-//             console.log(error);
-//     }
-// }
-
-
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-
-// // const ClothInfo = () => {
-// //   const [data, setData] = useState(null);
-// //   const [error, setError] = useState(null);
-
-// //   useEffect(() => {
-// //     const fetchData = async () => {
-// //       try {
-// //         const response = await axios.patch(
-// //           'https://academics.newtonschool.co/api/v1/ecommerce/wishlist/64f9d629b34d5276a097dbe6',
-// //           // You can include request data here if needed
-// //         );
-// //         setData(response.data)
