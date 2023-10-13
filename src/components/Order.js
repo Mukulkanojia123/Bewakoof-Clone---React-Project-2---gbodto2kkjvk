@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 
 const Itemdetails = ({ item }) => {
   // console.log(item);
-  const { displayImage, name, price } = item
+  // const { displayImage, name, price } = item
   return (
     <div className='w-full flex items-center'>
       <div className='w-[100px]'>
-        <img src={displayImage} alt={name} className='w-full h-auto' />
+        <img src={item?.displayImage} alt={item?.name} className='w-full h-auto' />
       </div>
       <div className='ml-4'>
-        <h1 className='text-lg font-bold'>{name}</h1>
-        <p className='text-gray-600'>{price}</p>
+        <h1 className='text-lg font-bold'>{item?.name}</h1>
+        <p className='text-gray-600'>{item?.price}</p>
       </div>
     </div>
   )
@@ -30,7 +30,7 @@ const CreateOrderedCard = ({ data }) => {
       <h2>No. of items : {items.length}</h2>
       {
         items.map((item) => (
-          <Itemdetails key={item.product._id} item={item.product} />
+          <Itemdetails key={item?.product?._id} item={item.product} />
         ))
       }
       <div>
@@ -62,7 +62,7 @@ const Order = () => {
     })
     const json = await data.json();
 
-    // console.log(json.data);
+    console.log(json.data);
     setOrders(json.data);
   }
 
@@ -80,8 +80,8 @@ const Order = () => {
     <div className='p-10 flex justify-center flex-wrap'>
 
       {
-        orders && orders.map((order) => (
-          <Link to={`/orderDetails/${order.order._id}`} key={order.order._id}>
+        orders && orders?.map((order) => (
+          <Link to={`/orderDetails/${order?.order?._id}`} key={order.order._id}>
           <CreateOrderedCard  data={order} />
           </Link>
         ))
