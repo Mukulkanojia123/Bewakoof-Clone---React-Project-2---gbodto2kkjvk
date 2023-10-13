@@ -62,7 +62,7 @@ const Order = () => {
     })
     const json = await data.json();
 
-    console.log(json.data);
+    // console.log(json.data);
     setOrders(json.data);
   }
 
