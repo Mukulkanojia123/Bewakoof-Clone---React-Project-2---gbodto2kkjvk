@@ -24,7 +24,7 @@ const ClothesCard = ({data}) => {
             <img src={data.displayImage}/>
             <div className='text-bold  p-2'>{data.name}</div>
             <div className={`text-bold font-bold p-2 ${textColor}`}> Color : {data.color}</div>        
-            <div className='text-bold font-bold text-green-400 p-2'>Price : {data.price}</div>
+            <div className='text-bold font-bold text-green-400 p-2'>Price : ₹{data.price}</div>
         </div>
     </div>
   )

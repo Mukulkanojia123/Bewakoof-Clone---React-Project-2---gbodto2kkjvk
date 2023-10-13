@@ -184,7 +184,7 @@ const ClothInfo = () => {
                                     {color}
                                 </span>
                             </div>
-                            <p className="p-3">Price : ${price}</p>
+                            <p className="p-3">Price : ₹{price}</p>
                             <p className="p-3">Quentity : <input type='number'min={"1"} className='border border-solid border-black'value={quentity} onChange={(e) =>setQuentity(e.target.value)}/></p>
 
                             <div className="flex my-4">

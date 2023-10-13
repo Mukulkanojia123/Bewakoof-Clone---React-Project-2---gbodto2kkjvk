@@ -25,7 +25,7 @@ const WishListCard = ({ data }) => {
       <div className='w-[350px] shadow-lg m-5'>
         <img src={displayImage} alt={name} />
         <div className='text-bold p-2'>{name}</div>
-        <div className='text-bold font-bold p-2'>{price}</div>
+        <div className='text-bold font-bold p-2'>₹{price}</div>
         <div>
           <button className='bg-green-400 text-white p-2 rounded-lg m-3'>
            <Link to={`/buynow/${id}`}> Order Now</Link>
