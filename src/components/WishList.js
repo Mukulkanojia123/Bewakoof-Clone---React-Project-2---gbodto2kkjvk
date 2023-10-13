@@ -18,7 +18,7 @@ const WishList = () => {
 
     const json = await data.json();
     setLikesData(json.data)
-    // console.log(json);
+    // console.log(json.data);
     // console.log(likesdata.items[0])
 
   }
@@ -45,7 +45,8 @@ const WishList = () => {
         setLikesData(null);
        }
 
-       if( likesdata && likesdata?.items?.length === 0){
+       if( likesdata && likesdata?.items?.length === 0 || likesdata?.items[0].products === null){
+
         return <div className='flex justify-center'>
           <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
         </div>
@@ -60,7 +61,9 @@ const WishList = () => {
         {
 
           likesdata && likesdata.items.length > 0 && likesdata.items.map((like) => (
-            <Link to={"/ClothInfo/" + like.products._id } key={like.products._id}> <WishListCard data={like} /></Link>
+            <Link to={"/ClothInfo/" + like?.products?._id } key={like?.products?._id}>
+               <WishListCard data={like} />
+               </Link>
           ))
           //likesdata && likesdata.items.length > 0 && <WishListCard data={likesdata.items[0]} />
         }
@@ -76,16 +79,3 @@ const WishList = () => {
 }
 
 export default WishList
-
-
-// async()=>{
-//   const userToken = localStorage.getItem("jwtToken");
-//   const data = await fetch("https://academics.newtonschool.co/api/v1/ecommerce/wishlist",{
-//     headers :{
-//       'Authorization': `Bearer ${userToken}`,
-//        'projectID': projectId
-//     }
-//   })
-
-//   const json = await data.json();
-//   console.log(json);
