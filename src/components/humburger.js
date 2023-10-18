@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Sidebar = () => {
+const humburger = () => {
 
   // const isMenuOpen = useSelector(store => store.app.isOpen)
 //   console.log(isMenuOpen)
@@ -29,4 +29,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default humburger

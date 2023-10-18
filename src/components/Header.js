@@ -8,7 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { BiFilterAlt } from 'react-icons/bi';
 import { FaList } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-import Sidebar from './Sidebr';
+import humburger from './humburger';
 
 
 
@@ -83,7 +83,7 @@ const Header = () => {
             </div>
         </div>
         {
-            hum && <Sidebar/>
+            hum && <humburger/>
         }
         </div>
     )

@@ -48,8 +48,12 @@ const WishList = () => {
        if( likesdata && likesdata?.items?.length === 0 || likesdata?.items[0].products === null){
 
         return <div className='flex justify-center'>
-          <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+          <div>
+        <p className='ml-20 font-bold text-2xl p-4'>Empty</p>
+        <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
         </div>
+        </div>
+        
       }
 
   return likesdata? (
@@ -73,7 +77,10 @@ const WishList = () => {
     </div>
   ) :(
     <div className='flex justify-center'>
+      <div>
+          
           <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png'/>
+          </div>
         </div>
   )
 }

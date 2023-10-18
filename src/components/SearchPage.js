@@ -8,21 +8,30 @@ import { Link } from 'react-router-dom';
 const SearchPage = () => {
   const [searchData, setSearchData] = useState(null);
   const { searchText } = useParams();
+  const [flag, setFlag] = useState(false);
   const userToken = localStorage.getItem("jwtToken");
   // console.log(searchText);
 
 
   const fetchSearch = async () => {
-    const data = await fetch(`${SEARCH_API}{"name":"${searchText}"}`, {
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${userToken}`,
-        "projectId": projectId
+    try {
+      const data = await fetch(`${SEARCH_API}{"name":"${searchText}"}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${userToken}`,
+          "projectId": projectId
+        }
+      })
+      const json = await data.json();
+      if(json.status === 'fail'){
+          setFlag(true);
       }
-    })
-    const json = await data.json();
-    console.log(json);
-    setSearchData(json.data);
+      console.log(json);
+      setSearchData(json.data);
+    } catch (error) {
+      console.log(error);
+      setFlag(true);
+    }
   }
   useEffect(() => {
     fetchSearch();
@@ -43,7 +52,13 @@ const SearchPage = () => {
     </div>
   ) : (
     <div className='flex justify-center m-20'>
-      <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png' />
+      <div>
+        {
+          flag &&  <p className='ml-20 font-bold text-2xl p-4'>Not Fount</p>
+          
+        }
+        <img src='https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png' />
+      </div>
     </div>
   );
 }

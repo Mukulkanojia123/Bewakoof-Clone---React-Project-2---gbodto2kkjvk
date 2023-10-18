@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { PRODUCTS_INFO_API, projectId, ADD_WISHLIST_API,Add_TO_CART } from '../Utils/utils'
 import Productimages from './Productimages'

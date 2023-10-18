@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 
 
 const FrontPage = () => {
-  const userDetail = useSelector(store => store.userDetail);
+  // const userDetail = useSelector(store => store.userDetail);
 
-    useEffect(()=>{
-      // console.log(userDetail);
-      console.log("succesfull data set");
-    },[userDetail])
+    // useEffect(()=>{
+    //   // console.log(userDetail);
+    //   console.log("succesfull data set");
+    // },[userDetail])
 
 
 

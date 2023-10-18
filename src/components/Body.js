@@ -3,7 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import FrontPage from './FrontPage'
 import { Outlet } from 'react-router-dom'
-import Sidebar from './Sidebr'
+import Sidebar from './humburger'
 
 const Body = () => {
   return (

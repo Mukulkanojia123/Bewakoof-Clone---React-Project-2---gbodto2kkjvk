@@ -28,7 +28,9 @@ const Products = () => {
           <div className='w-10/12'>
             <div className='flex justify-evenly  flex-wrap'>
               {list.map((cloth) => (
-               <Link to={"/ClothInfo/" + cloth._id} key={cloth._id}> <ClothesCard  data={cloth} /></Link>
+               <Link to={"/ClothInfo/" + cloth._id} key={cloth._id}>
+                 <ClothesCard key={cloth._id} data={cloth} />
+                  </Link>
               ))}
             </div>
           </div>

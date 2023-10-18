@@ -8,8 +8,6 @@ const WishListCard = ({ data }) => {
     // This is for data coming from WishList component
     const { products } = data;
     displayImage = products?.displayImage;
-  // console.log("i m card")
-
     name = products?.name;
     price = products?.price;
     id = products?._id;
@@ -31,9 +29,11 @@ const WishListCard = ({ data }) => {
       <div className='text-bold p-2'>{name}</div>
       <div className='text-bold font-bold p-2'>₹{price}</div>
       <div>
-        <button className='bg-green-400 text-white p-2 rounded-lg m-3'>
-          <Link to={`/buynow/${id}`}> Order Now</Link>
-        </button>
+        <Link to={`/buynow/${id}`} className='block'>
+          <button className='bg-green-400 text-white p-2 rounded-lg m-3'>
+            Order Now
+          </button>
+        </Link>
       </div>
     </div>
   );

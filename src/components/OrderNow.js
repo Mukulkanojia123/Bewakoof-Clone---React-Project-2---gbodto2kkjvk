@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+
 import { projectId } from "../Utils/utils";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -208,24 +208,3 @@ const OrderNow = () => {
 export default OrderNow;
 
 
-// axios
-// .post(
-//   "https://academics.newtonschool.co/api/v1/ecommerce/order",
-//   requestBody,
-//   {
-//     headers: {
-//       projectID: projectId,
-//       Authorization: `Bearer ${userToken}`,
-//     },
-//   }
-// )
-// .then((response) => {
-//   setOrdered(true);
-//   console.log("Item added to the order:", response.data);
-//   setMessage(response.data);
-//   // Handle success
-// })
-// .catch((error) => {
-//   console.error("Error adding item to order:", error);
-//   // Handle error
-// });

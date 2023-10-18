@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import {projectId , FILTER_API} from '../Utils/utils';
 import { useState } from "react";
 import ClothesCard from './ClothesCard'
@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 const Filter = () => {
   const [selectedField, setSelectedField] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [bgimg , setBgImg] = useState(true);
   const [options, setOptions] = useState([]);
   const [filter, setFilter] = useState([]);
 
   const fieldOptions = {
-    price: ["899", "429", "449", "849", "399", "649", "419", "599", "699"],
+   
     brand: [
       "OFFICIAL HARRY POTTER MERCHANDISE",
       "Bewakoof®",
@@ -25,13 +26,14 @@ const Filter = () => {
       "OFFICIAL TOM & JERRY MERCHANDISE",
     ],
     color: ["BLACK", "GREEN", "BROWN", "BLUE", "WHITE", "NAVY"],
+    price: ["899", "429", "449", "849", "399", "649", "419", "599", "699"],
   };
 
   const handleFieldChange = (e) => {
-    const field = e.target.value;
-    setSelectedField(field);
+    const selectedKey = e.target.value;
+    setSelectedField(selectedKey);
     setSelectedOption("");
-    setOptions(fieldOptions[field] || []);
+    setOptions(fieldOptions[selectedKey] || []);
   };
 
   const handleOptionChange = (e) => {
@@ -50,20 +52,21 @@ const Filter = () => {
     const json = await data.json();
     // console.log(json.data)
     setFilter(json.data);
+    setBgImg(false);
 
    
   };
 
-  return (
+ return (
     <div>
-        <div className="flex justify-center m-10">
+        <div className="flex justify-center m-10 ">
             <div>
       <label>Select a Field:</label>
       <select value={selectedField} onChange={handleFieldChange}>
         <option value="">Select a Field</option>
-        <option value="price">Price</option>
-        <option value="brand">Brand</option>
-        <option value="color">Color</option>
+        <option value="price">Brand</option>
+        <option value="brand">Color</option>
+        <option value="color">Price</option>
       </select>
 
       {selectedField && (
@@ -89,7 +92,7 @@ const Filter = () => {
         onClick={handlefilter}
         className="bg-yellow-400 p-2 m-5 rounded-md text-white"
       >
-        apply
+        Products
       </button>
       </div>
       </div>
@@ -99,6 +102,11 @@ const Filter = () => {
            <Link to={"/ClothInfo/" + cloth._id} key={cloth._id}> <ClothesCard  data={cloth} /></Link>      
       ))
       }
+      </div>
+      <div className='flex justify-center'>
+        {
+            bgimg && <img src='https://images.bewakoof.com/web/group-19-1617704502.png'/>
+        }
       </div>
     </div>
   );
