@@ -52,10 +52,6 @@ const Cart = () => {
   return  (
     <div>
       
-      <div className="flex justify-end">
-        {/* <button className="align m-4 p-3 bg-blue-700 text-white rounded-lg" onClick={removeAllItems}>Remove All</button> */}
-      </div>
-      
       <div className='flex justify-center flex-wrap'>
         {
           // i use WishList card here because structure is little bit different so handle it in wishList componet 
