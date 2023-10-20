@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { projectId, Add_TO_CART } from '../Utils/utils';
 import WishListCard from './WishListCard';
 
+
 const Cart = () => {
 
   const [cartData, setCartData] = useState([]);
@@ -42,6 +43,17 @@ const Cart = () => {
         getCartItems();
       }
 
+
+        const deleteAll = async() =>{
+              // setCartData([]);
+             await cartData.items.map((like)=>{
+               removeFromCart(like.product._id);
+                console.log(like.product._id)
+              })
+
+              // getCartItems()
+        }
+
         // image when no data
         if(!cartData || !cartData.items || cartData.items.length === 0){
           return <div className='flex justify-center'>
@@ -51,8 +63,11 @@ const Cart = () => {
 
   return  (
     <div>
-      
+      <div className='flex justify-end m-5'>
+          {/* <buton onClick={deleteAll} className='bg-blue-500 p-5 rounded-lg'>Delete All</buton> */}
+        </div>
       <div className='flex justify-center flex-wrap'>
+        
         {
           // i use WishList card here because structure is little bit different so handle it in wishList componet 
           cartData && cartData.items.length > 0 && cartData.items.map((like) => (

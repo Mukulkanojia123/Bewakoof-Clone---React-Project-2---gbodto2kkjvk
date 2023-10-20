@@ -82,6 +82,9 @@ const ClothInfo = () => {
     
             const json = await data.json();
             // console.log(json);
+            if(json.status === 'success'){
+                alert(json.message)
+            }
             setLike(!like);
         } catch (error) {
             console.log("error in adding wishlist", error);
@@ -98,6 +101,9 @@ const ClothInfo = () => {
             }
           })
           const json = await data.json();
+          if(json.status === 'success'){
+            alert(json.message)
+        }
         //   console.log(json)
           setLike(!like);
     }
@@ -121,6 +127,9 @@ const ClothInfo = () => {
                 })
                 const json = await data.json();
                 // console.log(json);
+                if(json.status === 'success'){
+                    alert(json.message)
+                }
         
             }catch(error){
                     console.log(error);

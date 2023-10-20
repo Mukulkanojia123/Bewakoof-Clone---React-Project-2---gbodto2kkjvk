@@ -34,6 +34,13 @@ const SignUp = () => {
 
         const json = await data.json();
         // console.log(json);
+        if(json.status === "success"){
+          alert("succes fully sign up")
+        }else{
+          alert(json.message);
+        }
+
+        
         
     }
 
