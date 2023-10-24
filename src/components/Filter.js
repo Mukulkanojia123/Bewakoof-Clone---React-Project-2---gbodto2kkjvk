@@ -64,9 +64,9 @@ const Filter = () => {
       <label>Select a Field:</label>
       <select value={selectedField} onChange={handleFieldChange}>
         <option value="">Select a Field</option>
-        <option value="price">Brand</option>
-        <option value="brand">Color</option>
-        <option value="color">Price</option>
+        <option value="brand">Brand</option>
+        <option value="color">Color</option>
+        <option value="price">Price</option>
       </select>
 
       {selectedField && (

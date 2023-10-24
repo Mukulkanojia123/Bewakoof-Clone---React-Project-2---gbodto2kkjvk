@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { projectId, ORDER_API } from '../Utils/utils';
 
 const OrderDetails = () => {
+    // when u click on any order in order list this page show
     const { resId } = useParams();
     const [myOrder, setMyOrder] = useState(null);
     const [myProduct, setMyProduct] = useState(null);
