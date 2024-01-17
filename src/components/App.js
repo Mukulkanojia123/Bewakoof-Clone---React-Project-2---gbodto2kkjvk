@@ -16,7 +16,7 @@ import Filter from './Filter';
 import OrderDetails from './OrderDetails'
 import UserAccount from './UserAccount';
 import UpdatePassword from './UpdatePassword';
-
+import WomenWare from './WomenWare';
 import DeleteAccount from './DeleteAccount';
 import Dummy from '../dummy/Dummy';
 
@@ -37,7 +37,7 @@ function App() {
         },
         {
           path : "/womenware",
-          element : <Products/>
+          element : <WomenWare/>
         },
         {
           path : "/ClothInfo/:resId",
